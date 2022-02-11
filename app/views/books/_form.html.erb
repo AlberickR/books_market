@@ -1,0 +1,63 @@
+<%= form_with model: @book do |f| %>
+  <div class="row">
+    <div class="form-group">
+      <div class="col-4 mb-4">
+        <%= f.label :name, 'Nombre' %>
+        <%= f.text_field :name, required: true, class: 'form-control' %>
+      </div>
+    </div>
+
+  <div class="form-group">
+    <div class="col-4 mb-4">
+      <%= f.label :author_name, 'Nombre del autor' %>
+      <%= f.text_field :author_name, required: true, class: 'form-control' %>
+    </div>
+  </div>
+
+    <div class="form-group">
+      <div class="col-4 mb-4">
+       <%= f.label :condition, 'Estetica del Libro' %>
+       <%= f.select :condition, [['Excelente', 1], ['Bueno', 2], ['Regular', 3], ['Presentable', 4], ['Mala', 5]],
+                                 { include_blank: true }, required: true, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-4 mb-4">
+        <%= f.label :category, 'Categoría' %>
+        <%= f.select :category, ['Científicos', 'Literatura', 'Biografías', 'Monografías', 'Recreativos', 'Ficción',
+                               'Poéticos', 'Juveniles', 'De referencia o consulta', 'Libro de texto'],
+                               { include_blank: true }, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-4 mb-4">
+        <%= f.label :genre, 'Género' %>
+        <%= f.select :genre, ['Arte y Diseño', 'Autoayuda', 'Ciencia y Naturaleza', 'Ciencias Sociales', 'Deportes',
+                              'Derecho y Política', 'Economía y Negocios', 'Ensayos y Biografías', 'Cine y Música',
+                              'Filosofía', 'Cocina', 'Historia', 'Poesía', 'Literatura', 'Medicina',
+                              'Infantiles y Juveniles', 'Terror', 'Misterio', 'Fantasía'],
+                               { include_blank: true }, required: true, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-4 mb-4">
+        <%= f.label :description, 'Descripción' %>
+        <%= f.text_field :description, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-4 mb-4">
+        <%= f.label :price, 'Precio' %>
+        <%= f.text_field :price, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Guardar', class: 'btn btn-lg btn-primary mx-5' %>
+    </div>
+  </div>
+<% end %>
